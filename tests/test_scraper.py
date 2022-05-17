@@ -1,5 +1,5 @@
 import pytest
-from scraper import Scraper
+from pycasso.scraper import Scraper
 
 
 def test_scraper_exists():
