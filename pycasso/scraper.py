@@ -16,11 +16,12 @@ def get_google_images(search_input):
 
     i = random.randint(1, 100)
     return results['images_results'][i]['original']
+    #print(results['images_results'][i]['original'])
 
 
-def get_many_images(search_input):
+def get_many_images():
   # returns url of random image from input search
-    search = search_input
+    search = input("What would you like to see?")
   # "api_key": os.getenv('API_KEY'),
     params = {
       "api_key": "6a4bd7e2a839c31c2082c98bf00cbd8d341769a99caf82e75a2bb96d67e54b4c",
@@ -31,8 +32,9 @@ def get_many_images(search_input):
     search = GoogleSearch(params)
     results = search.get_dict()
     list = []
-    for i in range(9):
+    for i in range(2):
       num = random.randint(1, 99)
       list.append(results['images_results'][num]['original'])
 
     return list
+
