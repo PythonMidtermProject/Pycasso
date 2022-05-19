@@ -14,7 +14,7 @@ import torchvision.transforms.functional as TF
 
 from dall_e          import map_pixels, unmap_pixels, load_model
 from IPython.display import display, display_markdown
-def stack(search):
+def stack(google):
     alpha = 3.0
     beta = 0
     howMany = input("How many images would you like to combine?")
