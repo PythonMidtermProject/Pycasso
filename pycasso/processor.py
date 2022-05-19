@@ -33,7 +33,7 @@ def stack(search):
     new_image = cv2.convertScaleAbs(both, alpha=alpha, beta=beta)
     final = cv2_imshow(both)
     return both
-both_img = stack(google)
+# both_img = stack(google)
 def preprocess(img):
     img1 = torch.squeeze(T.ToTensor()(img), 0)
     finalTen = torch.unsqueeze((img1), 0)
