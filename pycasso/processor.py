@@ -1,4 +1,20 @@
-def stack(search, google):
+import io
+import os, sys
+import requests
+import PIL
+import pickle
+import torch
+import cv2
+import imutils
+import numpy as np
+from google.colab.patches import cv2_imshow
+import matplotlib.pyplot as plt
+import torchvision.transforms as T
+import torchvision.transforms.functional as TF
+
+from dall_e          import map_pixels, unmap_pixels, load_model
+from IPython.display import display, display_markdown
+def stack(search):
     alpha = 3.0
     beta = 0
     howMany = input("How many images would you like to combine?")
@@ -17,8 +33,7 @@ def stack(search, google):
     new_image = cv2.convertScaleAbs(both, alpha=alpha, beta=beta)
     final = cv2_imshow(both)
     return both
-# both_img = stack(google)
-
+both_img = stack(google)
 def preprocess(img):
     img1 = torch.squeeze(T.ToTensor()(img), 0)
     finalTen = torch.unsqueeze((img1), 0)
